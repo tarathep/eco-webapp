@@ -17,4 +17,4 @@ This site was built on [econline.org](https://econline.org).
   java -jar target/eco-0.0.1-SNAPSHOT.jar
   ```
   
-  ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  ![alt text](https://github.com/tarathep/eco-webapp/blob/master/src/main/Capture.JPG?raw=true)
