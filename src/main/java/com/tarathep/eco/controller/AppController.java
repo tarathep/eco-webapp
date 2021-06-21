@@ -34,8 +34,12 @@ public class AppController {
 
     @PostMapping("/")
     public String createUser(@ModelAttribute Form form) {
-
-
+        
+        if(loginRepository.findByUsername(form.getUsername()) != null){
+            form.setResult("username already exist");
+            return "home";
+        }
+        
         String password = md5(form.getPassword());
         String del_password = md5(form.getDel_password());
 
@@ -46,6 +50,8 @@ public class AppController {
         }
 
         Login login = new Login();
+       
+
         login.setUsername(form.getUsername());
         login.setPassword(password);
         login.setDeletepass(del_password);
@@ -57,6 +63,7 @@ public class AppController {
         //login.setLastip();
     
         loginRepository.save(login);
+        
 
         return "home";
     }
