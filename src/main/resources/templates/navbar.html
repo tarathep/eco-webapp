@@ -1,0 +1,45 @@
+<nav th:fragment="header" class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" th:href="@{/}"><img src="/img/logo_s.png" width="130px"></a>
+
+            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button type="button" style="font-size: 10px;" class="btn btn-default btn-round"
+                        data-toggle="modal" data-target="#myModal">ECOの世界<br>About ECO<br>เกี่ยวกับ</button>
+
+                </li>
+                <li class="nav-item">
+                    <button type="button" style="font-size: 10px;"
+                        class="btn btn-primary btn-round">ECOをはじめよう<br>Startup
+                        Guide<br>แนวทางเริ่มต้น</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" style="font-size: 10px;"
+                        class="btn btn-info btn-round" onclick="downloadClient();">ダウンロード<br>Download<br>ดาวโหลด</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" style="font-size: 10px;" class="btn btn-success btn-round"
+                        data-toggle="modal" data-target="#loginModal">レジスター<br>Register<br>มาเป็นสมาชิกกัน</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" style="font-size: 10px;"
+                        class="btn btn-warning btn-round">コミュニティ<br>Community<br>พูดคุยแลกเปลี่ยน</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" style="font-size: 10px;"
+                        class="btn btn-danger btn-round">サポート<br>Support<br>ช่วยเหลือ</button>
+
+            </ul>
+        </div>
+    </div>
+</nav>
