@@ -154,6 +154,24 @@
         </div>
     </div>
 
+    <!-- Modal Message -->
+    <div class="modal fade bd-example-modal-sm" id="message-modal-dul" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><strong>System Message</strong></h5>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <strong>Username duplicated</strong> <br> username already exist!
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-link" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-----------------------------------------  end modal ----------------------------------------->
    
@@ -215,9 +233,9 @@
         if (condition == 'register_success') {
             $('#message-modal').modal('show');
         }
-
-
-
+        if (condition == 'username already exist') {
+            $('#message-modal-dul').modal('show');
+        } 
 
 
         // function scrollToDownload() {
