@@ -70,8 +70,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" value="" placeholder="Email" class="form-control" />
+                        <label>Username</label>
+                        <input type="text" value="" placeholder="Username" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Password</label>
@@ -109,7 +109,7 @@
                         <div class="form-group">
                             <label>Enter Username</label>
                             <input type="text" id="r_username" th:field="*{username}" value=""
-                                placeholder="admin@mail.com" class="form-control"
+                                placeholder="username" class="form-control"
                                 onchange="onclick_input_username_register();" required  />
                         </div>
                         <div class="form-group">
@@ -121,16 +121,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Delete Character Password</label>
-                            <input type="password" id="r_del_password" th:field="*{del_password}" value="" placeholder="Password" class="form-control" required/>
-                            <input type="password" id="r_del_password_c" value="" placeholder="Confirm Password" class="form-control" required/>
+                            <label>Email</label>
+                            <input type="email" id="r_del_password" th:field="*{del_password}" value="" placeholder="name@domain.com" class="form-control" required/>
                         </div>
-
-
-
-
-
-
 
                         <button onclick="checksubmit_register();" class="btn btn-block btn-round"> Sign Up</button>
                     </form>
@@ -194,21 +187,14 @@
         var username = document.getElementById("r_username").value;
         var password = document.getElementById("r_password").value;
         var password_c = document.getElementById("r_password_c").value;
-        var del_password = document.getElementById("r_del_password").value;
-        var del_password_c = document.getElementById("r_del_password_c").value;
-
         
+
         if(username == "" || password == "" ||del_password == ""){
             //alert("field is not empty!");
             check = false;
             return;
         }
         if(password != password_c){
-            //alert("password is not match !");
-            check = false;
-            return;
-        }
-        if(del_password != del_password_c){
             //alert("password is not match !");
             check = false;
             return;
@@ -246,6 +232,6 @@
 
     function downloadClient(){
         console.log("download here")
-        window.open('https://drive.google.com/file/d/1bH1lUAAghotkd_IFuumWtZOjsrAFsqxs/view','_blank');
+        window.open('https://drive.google.com/file/d/1Fw4ZFEFawzxsBsjyJGjNnRipqz2rWgsX','_blank');
     }
 </script>
