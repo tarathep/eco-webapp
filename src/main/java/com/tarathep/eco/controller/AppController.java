@@ -27,10 +27,19 @@ public class AppController {
     @RequestMapping(method = RequestMethod.GET, path = "/")
     public String home(Model model) {
         form = new Form();
-
         model.addAttribute("form", form);
         return "home";
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/download")
+    public String download(Model model) {
+        form = new Form();
+
+        model.addAttribute("form", form);
+        return "download";
+    }
+
+
 
     @PostMapping("/")
     public String createUser(@ModelAttribute Form form) {
@@ -78,5 +87,5 @@ public class AppController {
               return null;
         }
     }
-
+     
 }
