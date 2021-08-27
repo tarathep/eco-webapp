@@ -7,4 +7,4 @@ services:
             - '13200:8080'
         environment:
             - spring.datasource.url=jdbc:mysql://192.168.88.254:3306/sagaeco
-            # - spring.datasource.password=$SAGADB_PASSWORD
+            - spring.datasource.password=$SAGADB_PASSWORD
