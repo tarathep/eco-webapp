@@ -62,13 +62,19 @@ jobs:
     
     
     - name: Build and push
-      # working-directory: ${{ github.workspace }}
-      id: docker_build
-      uses: docker/build-push-action@v2
-      with:
-        context: .${{ github.workspace }}
-        push: true
-        tags: kietara/sagaweb:latest
+      run: |
+        docker build -t kietara/sagaweb:latest .
+        docker push kietara/sagaweb:latest
+      # # working-directory: ${{ github.workspace }}
+      # id: docker_build
+      # uses: docker/build-push-action@v2
+      # with:
+      #   context: .${{ github.workspace }}
+      #   push: true
+      #   tags: kietara/sagaweb:latest
+      
+      
+      
 
   
   deploy:
