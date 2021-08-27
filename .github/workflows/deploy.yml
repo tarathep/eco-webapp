@@ -13,9 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: build
-    environment:
-      name: Production
-      url: 'https://econline.org'
    
     steps:
     # CHECKOUT SOURCE CODE
@@ -76,6 +73,11 @@ jobs:
     name: Deploy to Production
     runs-on: ubuntu-latest
     needs: [push_to_registry]
+
+    environment:
+      name: Production
+      url: 'https://econline.org'
+    
     steps:
     - name: Deploy
       uses: appleboy/ssh-action@master
@@ -85,4 +87,4 @@ jobs:
         password: ${{ secrets.BOKIE_SERVER_PASSWORD }}
         port: ${{ secrets.BOKIE_SERVER_PORT }}
         script: | 
-          docker run -d --name saga-web -p 12300:8080 -e spring.datasource.url=jdbc:mysql://192.168.88.254:3306/sagaeco -e spring.datasource.password=${{ secrets.SAGADB_PASSWORD }} sagaweb:latest
+          docker run -d --name saga-web -p 12300:8080 -e spring.datasource.url=jdbc:mysql://192.168.88.254:3306/sagaeco -e spring.datasource.password=${{ secrets.SAGADB_PASSWORD }} kietara/sagaweb:latest
