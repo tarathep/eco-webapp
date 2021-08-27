@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.tarathep</groupId>
 	<artifactId>eco</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>eco</name>
 	<description>Emil Chronicle Online Web Application</description>
 

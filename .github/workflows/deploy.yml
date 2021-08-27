@@ -1,0 +1,37 @@
+name: DEPLOYMENT
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploy
+    environment:
+      name: Deployment
+      url: 'https://econline.org'
+   
+    steps:
+    # CHECKOUT SOURCE CODE
+    - uses: actions/checkout@v2
+
+    # SETING UP JAVA FOR BUILD
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+
+    # BUILD ONLY NOT TEST & UPLOAD RESULT
+    - name: Build Artifact
+      run: mvn clean install -DskipTests
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifact
+        path: '${{ github.workspace }}/target/*.jar'
