@@ -98,4 +98,4 @@ jobs:
           docker stop saga-web
           docker rm saga-web
           docker rmi kietara/sagaweb:latest
-          docker run -d --name saga-web -p 12300:8080 -e spring.datasource.url=jdbc:mysql://192.168.88.254:3306/sagaeco -e spring.datasource.password=${{ secrets.SAGADB_PASSWORD }} kietara/sagaweb:latest
+          docker run -d --name saga-web -p 12300:8080 -e spring.datasource.url=jdbc:mysql://172.16.20.10:3306/sagaeco -e spring.datasource.password=${{ secrets.SAGADB_PASSWORD }} kietara/sagaweb:latest
