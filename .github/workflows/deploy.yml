@@ -83,7 +83,4 @@ jobs:
         password: ${{ secrets.BOKIE_SERVER_PASSWORD }}
         port: ${{ secrets.BOKIE_SERVER_PORT }}
         script: |
-          docker stop saga-web
-          docker rm saga-web
-          docker run -d --pull=always --restart always --name saga-web -p ${{ secrets.MAPPING_PORT }} -e spring.datasource.url=${{ secrets.SAGADB_CONNECTION }} -e spring.datasource.password=${{ secrets.SAGADB_PASSWORD }} kietara/sagaweb:latest
-          docker start saga-web
+          saga-web.bat
